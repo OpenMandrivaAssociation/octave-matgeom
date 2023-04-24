@@ -1,21 +1,22 @@
-%define octpkg matgeom
+%global octpkg matgeom
 
-Summary:	Library for geometric computing extending MatGeom functions
-Name:		octave-%{octpkg}
+Summary:	Geometry toolbox for 2D/3D geometric computing extending MatGeom
+Name:		octave-matgeom
 Version:	1.2.3
-Release:	1
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Release:	2
 License:	GPLv3+ and BSD and Boost Software License
 Group:		Sciences/Mathematics
-Url:		https://packages.octave.org/%{octpkg}/
-BuildRequires:	octave-devel
+Url:		https://packages.octave.org/matgeom/
+Source0:	https://downloads.sourceforge.net/octave/matgeom-%{version}.tar.gz
+
+BuildRequires:  octave-devel >= 4.2.0
 
 Requires:	octave(api) = %{octave_api}
 
-BuildArch:	noarch
-
 Requires(post): octave
 Requires(postun): octave
+
+BuildArch:	noarch
 
 %description
 MatGeom is a library for geometric computing with Matlab in 2D and 3D. It
@@ -32,9 +33,6 @@ contains several hundreds of functions for the creation and manipulation of
 
 %prep
 %autosetup -p1 -n %{octpkg}-%{version}
-
-# remove backup files
-#find . -name \*~ -delete
 
 %build
 %octave_pkg_build

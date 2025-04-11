@@ -3,7 +3,7 @@
 Summary:	Geometry toolbox for 2D/3D geometric computing extending MatGeom
 Name:		octave-matgeom
 Version:	1.2.4
-Release:	2
+Release:	3
 License:	GPLv3+ and BSD and Boost Software License
 Group:		Sciences/Mathematics
 Url:		https://packages.octave.org/matgeom/
